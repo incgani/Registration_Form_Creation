@@ -1,0 +1,37 @@
+{% extends 'dummy.html' %}
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block body_block %}
+<h1>LOGIN FORM</h1>
+<form  method="POST">
+    {% csrf_token %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h4>Login</h4>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-outline-primary my-2 my-sm-0">Submit</button><br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<a href="{% url 'forgot_password' %}">forgot_password?</a>
+
+{% endblock %}
